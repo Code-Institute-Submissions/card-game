@@ -7,6 +7,7 @@ html{
     min-height: 100vh;
 }
 
+
 #heading {
     font-family: 'Baloo Chettan 2', cursive;
     font-size: 80px;
@@ -40,31 +41,75 @@ html{
 }
 
 
-#card{
+/* Properties for the card for both sides */
+.card{
     position: relative;
-    background-color: lightblue;
     height: 150px;
-    width: 120px;
+    width: 100px;
 }
 
-#card-face{
+
+.card-face{
     position: absolute;
-    width: 100%;
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: black;
+    backface-visibility: hidden;
 }
 
-.far{
-    font-size:70px;
-    padding-left: 21px;
-    padding-top: 40px;
-}
-
-.far:hover{
+.card-back{
     position: absolute;
-    font-size: 80px;
-    transition: ease-in-out;
-    transition-duration: 500ms;
+    background-color: pink;
+    transform: rotateY(0);
+}
+
+.card-front{
+    background-color: yellow;
+    transform: rotateY(180deg);
+}
+
+/* Classes for the javascript to fire to flip the cards over
+   and back again */
+.card.visible .card-back{
+    transform: rotateY(-180deg);
+}
+
+.card.visible .card-front{
+    transform: rotateY(0);
+}
+
+
+/* Animation of the image on the front of the card */
+.card-value{
+    position: relative;
+    transition: transform 100ms ease-in-out;
+    transform: scale(1);
+}
+
+.card-front:hover .card-value {
+    transform: scale(1.4);
+  }
+
+
+
+
+/* Animation and styles of the star on the card back */
+.far{
+    font-size: 50px;
+    transition: transform 200ms ease-in-out;
+    transform: scale(1.0);
+}
+
+.card-back:hover .far{
+    transform: scale(1.5);
+}
+
+/* Animation and styles for the card fronts */
+.fab{
+    font-size: 50px;
 }
