@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="styles/styles.css">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 
@@ -15,10 +14,17 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <script src="main.js"></script>
 
     <title>Card matching game!</title>
 </head>
 <body id="main-body">
+
+    <div class="overlay-start visible">
+        Click to Start
+    </div>
 
     <div class="container">
         <div class="row">
@@ -30,12 +36,8 @@
 
     <div class="container">
         <div class="row">
-          <div class="col-sm" id="timer">
-            Timer 100
-          </div>
-          <div class="col-sm" id="score">
-            Card flips 0
-          </div>
+          <span class="col-sm" id="timer">Timer 100</span>
+          <span class="col-sm" id="score">Card flips 0</span>
         </div>
     </div>
 
@@ -51,7 +53,17 @@
     <div class="container">
         <div class="d-flex justify-content-center">
             <div class="p-2">
-                <div class="card visible">
+                <div class="card">
+                    <div class="card-back card-face">
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div class="card-front card-face">
+                        <i class="fab fa-accessible-icon card-value"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="p-2">
+                <div class="card">
                     <div class="card-back card-face">
                         <i class="far fa-star"></i>
                     </div>
@@ -80,16 +92,6 @@
                     </div>
                 </div>
             </div>
-            <div class="p-2">
-                <div class="card">
-                    <div class="card-back card-face">
-                        <i class="far fa-star"></i>
-                    </div>
-                    <div class="card-front card-face">
-                        
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 
@@ -182,7 +184,6 @@
             </div>
         </div>
     </div>
-    
-    <script src="main.js"></script>
+
 </body>
 </html>

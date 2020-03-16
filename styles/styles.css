@@ -43,7 +43,7 @@ html{
 
 /* Properties for the card for both sides */
 .card{
-    position: relative;
+
     height: 150px;
     width: 100px;
 }
@@ -72,6 +72,32 @@ html{
     background-color: yellow;
     transform: rotateY(180deg);
 }
+
+
+.overlay-start {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    display: none;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #FF6D00;
+    font-family: serif;
+    font-size: 50px;
+    background-color: black;
+    opacity: 0.9;
+    transition: background-color 500ms, font-size 500ms;
+  }
+
+  .overlay-start.visible {
+    display: flex;
+    animation: overlay-grow 500ms forwards;
+  }
+
 
 /* Classes for the javascript to fire to flip the cards over
    and back again */
