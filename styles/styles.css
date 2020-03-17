@@ -16,15 +16,7 @@ html{
     text-align: center;
 }
 
-#timer {
-    font-family: 'Baloo Chettan 2', cursive;
-    font-size: 50px;
-    font-weight: 500;
-    text-shadow: 2px 2px 2px red;
-    text-align: center;
-}
-
-#score {
+.timer-and-score {
     font-family: 'Baloo Chettan 2', cursive;
     font-size: 50px;
     font-weight: 500;
@@ -62,6 +54,18 @@ html{
     backface-visibility: hidden;
 }
 
+.card.visible .card-back{
+    transform: rotateY(-180deg);
+}
+
+.card.visible .card-front{
+    transform: rotateY(0);
+}
+
+.card.matched .card-front .card-value{
+    animation: dance 1s linear infinite 500ms;
+}
+
 .card-back{
     position: absolute;
     background-color: pink;
@@ -73,8 +77,18 @@ html{
     transform: rotateY(180deg);
 }
 
+.card-value{
+    position: relative;
+    transition: transform 100ms ease-in-out;
+    transform: scale(0.5);
+}
 
-.overlay-start {
+.card-front:hover .card-value {
+    transform: scale(0.6);
+  }
+
+
+.overlay-text {
     top: 0;
     left: 0;
     right: 0;
@@ -93,36 +107,14 @@ html{
     transition: background-color 500ms, font-size 500ms;
   }
 
-  .overlay-start.visible {
+  .overlay-text-small {
+      font-size: 40px;
+  }
+
+  .overlay-text.visible {
     display: flex;
     animation: overlay-grow 500ms forwards;
   }
-
-
-/* Classes for the javascript to fire to flip the cards over
-   and back again */
-.card.visible .card-back{
-    transform: rotateY(-180deg);
-}
-
-.card.visible .card-front{
-    transform: rotateY(0);
-}
-
-
-/* Animation of the image on the front of the card */
-.card-value{
-    position: relative;
-    transition: transform 100ms ease-in-out;
-    transform: scale(1);
-}
-
-.card-front:hover .card-value {
-    transform: scale(1.4);
-  }
-
-
-
 
 /* Animation and styles of the star on the card back */
 .far{
@@ -139,3 +131,15 @@ html{
 .fab{
     font-size: 50px;
 }
+
+@keyframes dance {
+    0%, 100% {
+      transform: rotate(0)
+    }
+    25% {
+      transform: rotate(-30deg)
+    }
+    75% {
+      transform: rotate(30deg)
+    }
+  }
