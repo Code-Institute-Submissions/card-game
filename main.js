@@ -1,4 +1,74 @@
-class CardMatchingGame {
+    let overlays = Array.from(document.getElementsByClassName('overlay-text'));
+   
+    /* Removes the overlay on the welcome screen*/
+    overlays.forEach(overlay => {
+        overlay.addEventListener('click', () => {
+            overlay.classList.remove('visible');
+        });
+    });
+
+    
+/* Countdown timer for the game length */
+const startingMinutes = 1;
+let time = startingMinutes * 60;
+
+const countDownEl = document.getElementById('time-remaining');
+
+let timerSetup = setInterval(upDateCountDown, 1000);
+
+function upDateCountDown() {
+    const minutes = Math.floor(time / 60);
+    let seconds = time % 60;
+
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+
+    countDownEl.innerHTML = `${minutes}:${seconds}`;
+    time--;
+
+    if(time === 0){
+        clearInterval(timerSetup);
+        countDownEl.innerHTML = ": Game over";
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*class CardMatchingGame {
     constructor(totalTime, cards){
         this.cardsArray = cards;
         this.totalTime = totalTime;
@@ -6,7 +76,7 @@ class CardMatchingGame {
         this.timer = document.getElementById('time-remaining')
     }
 
-    /* Starting the game and reseting the score and timer*/
+    /* Starting the game and reseting the score and timer
     startGame() {
         this.timeRemaining = this.totalTime;
         this.cardsToCheck = null;
@@ -21,7 +91,7 @@ class CardMatchingGame {
         this.timer.innerText = this.timeRemaining;
     }
 
-    /* Starting the coundown timer and setting the time limit before game over*/ 
+    /* Starting the coundown timer and setting the time limit before game over 
     startCountdown() {
         return setInterval(() => {
             this.timeRemaining--;
@@ -127,5 +197,5 @@ class CardMatchingGame {
             });
         });
     }
-
+    */
     
