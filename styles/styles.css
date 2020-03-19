@@ -38,6 +38,9 @@ html{
 
     height: 150px;
     width: 100px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ED9DFF
 }
 
 
@@ -56,10 +59,12 @@ html{
 
 .card.visible .card-back{
     transform: rotateY(-180deg);
+    transition: transform 500ms ease-out;
 }
 
 .card.visible .card-front{
     transform: rotateY(0);
+    transition: transform 500ms ease-in-out;
 }
 
 .card.matched .card-front .card-value{
@@ -67,25 +72,37 @@ html{
 }
 
 .card-back{
-    position: absolute;
     background-color: pink;
-    transform: rotateY(0);
+    transform: rotateY(0deg);
+    transition: transform 500ms ease-in-out;
 }
 
 .card-front{
     background-color: yellow;
     transform: rotateY(180deg);
+    transition: transform 500ms ease-in-out;
 }
 
 .card-value{
-    position: relative;
-    transition: transform 100ms ease-in-out;
+    transition: transform 500ms ease-in-out;
     transform: scale(0.5);
 }
 
-.card-front:hover .card-value {
-    transform: scale(0.6);
-  }
+.card-front:hover .card-value{
+    transition: transform 500ms ease-in-out;
+    transform: scale(0.3);
+}
+
+/* Animation and styles of the star on the card back */
+.far{
+    font-size: 50px;
+    transition: 500ms ease-in-out;
+    transform: scale(1.0);
+}
+
+.card-back:hover .far{
+    transform: scale(1.5);
+}
 
 
 .overlay-text {
@@ -116,21 +133,7 @@ html{
     animation: overlay-grow 500ms forwards;
   }
 
-/* Animation and styles of the star on the card back */
-.far{
-    font-size: 50px;
-    transition: transform 200ms ease-in-out;
-    transform: scale(1.0);
-}
 
-.card-back:hover .far{
-    transform: scale(1.5);
-}
-
-/* Animation and styles for the card fronts */
-.fab{
-    font-size: 50px;
-}
 
 @keyframes dance {
     0%, 100% {

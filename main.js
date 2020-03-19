@@ -1,13 +1,12 @@
-    let overlays = Array.from(document.getElementsByClassName('overlay-text'));
+let overlays = Array.from(document.getElementsByClassName('overlay-text'));
    
-    /* Removes the overlay on the welcome screen*/
-    overlays.forEach(overlay => {
-        overlay.addEventListener('click', () => {
-            overlay.classList.remove('visible');
-        });
+/* Removes the overlay on the welcome screen*/
+overlays.forEach(overlay => {
+    overlay.addEventListener('click', () => {
+        overlay.classList.remove('visible');
     });
+});
 
-    
 /* Countdown timer for the game length */
 const startingMinutes = 1;
 let time = startingMinutes * 60;
@@ -31,36 +30,18 @@ function upDateCountDown() {
     }
 }
 
+/* Code to flip the cards to face showing  */
+let card = Array.from(document.getElementsByClassName('card'));
 
+    card.forEach(card => {
+        card.addEventListener('click', () => {
+            card.classList.add('visible');
+        });
+    });
 
+    /* matching the cards functionality */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 
 
 
