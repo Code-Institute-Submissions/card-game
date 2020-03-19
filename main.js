@@ -32,16 +32,23 @@ function upDateCountDown() {
 
 /* Code to flip the cards to face showing  */
 let card = Array.from(document.getElementsByClassName('card'));
+let src = Array.from(document.getElementsByClassName('card-value'))
+
 
     card.forEach(card => {
         card.addEventListener('click', () => {
             card.classList.add('visible');
+            if(document.getElementById('image') === document.getElementById('image')) {
+                card-value.classList.add('matched');
+            } else {
+                card.classList.remove('visible');
+            }
         });
     });
 
     /* matching the cards functionality */
 
-    
+
 
 
 

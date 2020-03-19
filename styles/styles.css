@@ -67,7 +67,7 @@ html{
     transition: transform 500ms ease-in-out;
 }
 
-.card.matched .card-front .card-value{
+.image.matched .card-front .card-value{
     animation: dance 1s linear infinite 500ms;
 }
 
