@@ -32,10 +32,13 @@ html{
     text-align: center;
 }
 
+.game-container{
+    display: flex;
+    display: -ms-flexbox;
+}
 
 /* Properties for the card for both sides */
 .card{
-
     height: 150px;
     width: 100px;
     border: none;
@@ -46,8 +49,8 @@ html{
 
 .card-face{
     position: absolute;
-    display: flex;
     justify-content: center;
+    display: flex;
     align-items: center;
     width: 100%;
     height: 100%;
@@ -67,7 +70,8 @@ html{
     transition: transform 500ms ease-in-out;
 }
 
-.image.matched .card-front .card-value{
+.matched .card-front{
+    background-color: orange;
     animation: dance 1s linear infinite 500ms;
 }
 
@@ -84,6 +88,7 @@ html{
 }
 
 .card-value{
+    display: flex;
     transition: transform 500ms ease-in-out;
     transform: scale(0.5);
 }
@@ -140,9 +145,9 @@ html{
       transform: rotate(0)
     }
     25% {
-      transform: rotate(-30deg)
+      transform: rotate(-10deg)
     }
     75% {
-      transform: rotate(30deg)
+      transform: rotate(10deg)
     }
   }
