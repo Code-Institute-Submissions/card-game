@@ -18,22 +18,30 @@ function upDateCountDown() {
     if(time === 0){
         clearInterval(timerSetup);
         countDownEl.innerHTML = ": Game over";
+        
+        restartGame();
     }
 }
 
+/* Function to reload the page and restarts the game with a new timer and shuffle */
+function restartGame() {
+    document.getElementById('game-over-text').classList.add('visible');
+
+    document.getElementById('game-over-text').addEventListener('click', () => {
+        location.reload();
+    });
+}
 
 /* Removes the overlay on the welcome screen*/
 let overlays = Array.from(document.getElementsByClassName('overlay-text'));
    
 overlays.forEach(overlay => {
     overlay.addEventListener('click', () => {
-        overlay.classList.remove('visible');
+        overlay.classList.remove('visible',);
     });
 });
 
-
 /* Flipping the card and checking for a matching pair of cards */
-
 const cards = document.querySelectorAll('.card');
 
 let hasFlippedCard = false;
@@ -57,33 +65,35 @@ function flipCard(){
     }
 }     
 
-    function checkCardsMatch() {
+/* Checking if the cards match and stopping them from being clicked on again
+    during that game */
+function checkCardsMatch() {
 
-      if (firstCard.dataset.names === secondCard.dataset.names) {
-          firstCard.classList.add('matched');
-          secondCard.classList.add('matched');
-      } else {
+    if (firstCard.dataset.names === secondCard.dataset.names) {
+        firstCard.classList.add('matched');
+        secondCard.classList.add('matched');
+    } else {
 
         lockGameArea = true;
+        
 
         setTimeout(() => {
-          firstCard.classList.remove('visible');
-          secondCard.classList.remove('visible');
+            firstCard.classList.remove('visible');
+            secondCard.classList.remove('visible');
 
-          lockGameArea = false;
-      }, 1500);
+            lockGameArea = false;
+        }, 1500);
     }
 }    
 
-
-
-function shuffleCards(){
+/* Shuffle function to have the cards in a random order */
+(function shuffle() {
     cards.forEach(card => {
-        let randomShuffle = Math.floor(Math.random() * 12);
-        card.style.order = randomShuffle;
+      let randomPos = Math.floor(Math.random() * 12);
+      card.style.order = randomPos;
     });
-};
+  })();
 
-window.onload = shuffleCards();
 
+/* Global attribute for the cards to flip the cards on click */
 cards.forEach(card => card.addEventListener('click', flipCard));

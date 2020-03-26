@@ -10,10 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan+2&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
+    
     <link rel="stylesheet" href="styles/styles.css">
 
 
@@ -22,15 +19,16 @@
 <body id="main-body">
 
     <div class="overlay-text visible">
-        Click to Start
+        Click to Start.<br> Timers running already!
     </div>
 
     <div id="game-over-text" class="overlay-text">
         GAME OVER
-        <span class="overlay-text-small">Click to Restart</span>
+        <span class="overlay-text-small">Times up, click for a new game!
+        </span>
     </div>
 
-    <div id="victory-text" class="overlay-text">
+    <div id="victory" class="overlay-text">
         Victory
         <span class="overlay-text-small">Click to restart</span>
     </div>
@@ -60,136 +58,100 @@
     </div>
 
     <div class="container" id="game-container">
-        <div class="d-flex justify-content-center">
-            <div class="p-2">
-                <div class="card" data-names="apple">
-                    <div class="card-back card-face">
-                        <i class="far fa-star"></i>
-                    </div>
-                    <div class="card-front card-face">
-                        <img class="card-value" src="images/Apple-logo.png">
-                    </div>
-                </div>
+        <div class="card" data-names="apple">
+            <div class="card-back card-face">
+                <i class="far fa-star"></i>
             </div>
-            <div class="p-2">
-                <div class="card" data-names="apple">
-                    <div class="card-back card-face">
-                        <i class="far fa-star"></i>
-                    </div>
-                    <div class="card-front card-face">
-                        <img class="card-value" src="images/Apple-logo.png">
-                    </div>
-                </div>
+            <div class="card-front card-face">
+                <img class="card-value" src="images/Apple-logo.png">
             </div>
-            <div class="p-2">
-                <div class="card" data-names="css">
-                    <div class="card-back card-face">
-                        <i class="far fa-star"></i>
-                    </div>
-                    <div class="card-front card-face">
-                        <img class="card-value" src="images/CSS3.png">
-                    </div>
-                </div>
+        </div>    
+        <div class="card" data-names="apple">
+            <div class="card-back card-face">
+                <i class="far fa-star"></i>
             </div>
-            <div class="p-2">
-                <div class="card" data-names="css">
-                    <div class="card-back card-face">
-                        <i class="far fa-star"></i>
-                    </div>
-                    <div class="card-front card-face">
-                        <img class="card-value" src="images/CSS3.png">
-                    </div>
-                </div>
+            <div class="card-front card-face">
+                <img class="card-value" src="images/Apple-logo.png">
+             </div>
+        </div>
+        <div class="card" data-names="css">
+            <div class="card-back card-face">
+                <i class="far fa-star"></i>
+            </div>
+            <div class="card-front card-face">
+                <img class="card-value" src="images/CSS3.png">
             </div>
         </div>
-    </div>
-
-    <div class="container">
-        <div class="d-flex justify-content-center">
-            <div class="p-2">
-                <div class="card" data-names="html">
-                    <div class="card-back card-face">
-                        <i class="far fa-star"></i>
-                    </div>
-                    <div class="card-front card-face">
-                        <img class="card-value" src="images/HTML5.png">
-                    </div>
-                </div>
+        <div class="card" data-names="css">
+            <div class="card-back card-face">
+                <i class="far fa-star"></i>
             </div>
-            <div class="p-2">
-                <div class="card" data-names="html">
-                    <div class="card-back card-face">
-                        <i class="far fa-star"></i>
-                    </div>
-                    <div class="card-front card-face">
-                        <img class="card-value" src="images/HTML5.png">
-                    </div>
-                </div>
-            </div>
-            <div class="p-2">
-                <div class="card" data-names="javascript">
-                    <div class="card-back card-face">
-                        <i class="far fa-star"></i>
-                    </div>
-                    <div class="card-front card-face">
-                        <img class="card-value" src="images/JS-logo.png">
-                    </div>
-                </div>
-            </div>
-            <div class="p-2">
-                <div class="card" data-names="javascript">
-                    <div class="card-back card-face">
-                        <i class="far fa-star"></i>
-                    </div>
-                    <div class="card-front card-face">
-                        <img class="card-value" src="images/JS-logo.png">
-                    </div>
-                </div>
+            <div class="card-front card-face">
+                <img class="card-value" src="images/CSS3.png">
             </div>
         </div>
-    </div>
-
-    <div class="container">
-        <div class="d-flex justify-content-center">
-            <div class="p-2">
-                <div class="card" data-names="python">
-                    <div class="card-back card-face">
-                        <i class="far fa-star"></i>
-                    </div>
-                    <div class="card-front card-face">
-                        <img class="card-value" src="images/PythonLogo.png">
-                    </div>
-                </div>
+        <div class="card" data-names="html">
+            <div class="card-back card-face">
+                <i class="far fa-star"></i>
             </div>
-            <div class="p-2">
-                <div class="card" data-names="python">
-                    <div class="card-back card-face">
-                        <i class="far fa-star"></i>
-                    </div>
-                    <div class="card-front card-face">
-                        <img class="card-value" src="images/PythonLogo.png">
-                    </div>
-                </div>
+            <div class="card-front card-face">
+                <img class="card-value" src="images/HTML5.png">
             </div>
-            <div class="p-2">
-                <div class="card" data-names="windows">
-                    <div class="card-back card-face">
-                        <i class="far fa-star"></i>
-                    </div>
-                    <div class="card-front card-face">
-                        <img class="card-value" src="images/Windows.png">
-                    </div>
-                </div>
+        </div>
+        <div class="card" data-names="html">
+            <div class="card-back card-face">
+                <i class="far fa-star"></i>
             </div>
-            <div class="p-2">
-                <div class="card" data-names="windows">
-                    <div class="card-back card-face">
-                        <i class="far fa-star"></i>
-                    </div>
-                    <div class="card-front card-face">
-                        <img class="card-value" src="images/Windows.png">
-                    </div>
-                </div>
+            <div class="card-front card-face">
+                <img class="card-value" src="images/HTML5.png">
+            </div>
+        </div>
+        <div class="card" data-names="javascript">
+            <div class="card-back card-face">
+                <i class="far fa-star"></i>
+            </div>
+            <div class="card-front card-face">
+                <img class="card-value" src="images/JS-logo.png">
+            </div>
+        </div>
+        <div class="card" data-names="javascript">
+            <div class="card-back card-face">
+                <i class="far fa-star"></i>
+            </div>
+            <div class="card-front card-face">
+                <img class="card-value" src="images/JS-logo.png">
+            </div>
+        </div>
+        <div class="card" data-names="python">
+            <div class="card-back card-face">
+                <i class="far fa-star"></i>
+            </div>
+            <div class="card-front card-face">
+                <img class="card-value" src="images/PythonLogo.png">
+            </div>
+        </div>
+        <div class="card" data-names="python">
+            <div class="card-back card-face">
+                <i class="far fa-star"></i>
+            </div>
+            <div class="card-front card-face">
+                <img class="card-value" src="images/PythonLogo.png">
+            </div>    
+        </div>
+        <div class="card" data-names="windows">
+            <div class="card-back card-face">
+                <i class="far fa-star"></i>
+            </div>
+            <div class="card-front card-face">
+                <img class="card-value" src="images/Windows.png">
+            </div>
+        </div>
+        <div class="card" data-names="windows">
+            <div class="card-back card-face">
+                <i class="far fa-star"></i>
+            </div>
+            <div class="card-front card-face">
+                <img class="card-value" src="images/Windows.png">
             </div>
         </div>
     </div>

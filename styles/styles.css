@@ -7,7 +7,6 @@ html{
     min-height: 100vh;
 }
 
-
 #heading {
     font-family: 'Baloo Chettan 2', cursive;
     font-size: 80px;
@@ -24,7 +23,6 @@ html{
     text-align: center;
 }
 
-
 #game-rules{
     font-family: 'Indie Flower', cursive;
     font-size: 25px;
@@ -32,20 +30,24 @@ html{
     text-align: center;
 }
 
-.game-container{
-    display: flex;
-    display: -ms-flexbox;
-}
-
 /* Properties for the card for both sides */
+#game-container {
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 15px;
+    justify-content: center;
+    perspective: 500px;
+  }
+
 .card{
+    position: relative;
     height: 150px;
     width: 100px;
     border: none;
     border-radius: 10px;
-    background-color: #ED9DFF
+    background-color: #ED9DFF;
 }
-
 
 .card-face{
     position: absolute;
@@ -57,6 +59,7 @@ html{
     border-radius: 10px;
     border-style: solid;
     border-color: black;
+    overflow: hidden;
     backface-visibility: hidden;
 }
 
@@ -88,7 +91,7 @@ html{
 }
 
 .card-value{
-    display: flex;
+    position: fixed;
     transition: transform 500ms ease-in-out;
     transform: scale(0.5);
 }
@@ -109,7 +112,6 @@ html{
     transform: scale(1.5);
 }
 
-
 .overlay-text {
     top: 0;
     left: 0;
@@ -127,19 +129,19 @@ html{
     background-color: black;
     opacity: 0.9;
     transition: background-color 500ms, font-size 500ms;
-  }
+    text-align: center;
+}
 
-  .overlay-text-small {
+.overlay-text-small {
       font-size: 40px;
-  }
+}
 
-  .overlay-text.visible {
+.overlay-text.visible {
     display: flex;
     animation: overlay-grow 500ms forwards;
-  }
+}
 
-
-
+/* Animation for the cards when matched to dance on the screen */
 @keyframes dance {
     0%, 100% {
       transform: rotate(0)
