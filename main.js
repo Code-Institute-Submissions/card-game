@@ -72,6 +72,9 @@ function checkCardsMatch() {
     if (firstCard.dataset.names === secondCard.dataset.names) {
         firstCard.classList.add('matched');
         secondCard.classList.add('matched');
+
+        checkForVictory();
+
     } else {
 
         lockGameArea = true;
@@ -85,6 +88,26 @@ function checkCardsMatch() {
         }, 1500);
     }
 }    
+
+/* Function counting the matches and returning the victory screen overlay 
+   This also stops the timer when the victory is shown so it doesn'nt countdown
+   to Zero and display the game over message */
+let victoryCounter = 0;
+
+function checkForVictory() {
+    victoryCounter++;
+    if (victoryCounter ===6) {
+        clearInterval(timerSetup);
+
+        document.getElementById('victory').classList.add('visible');
+
+        document.getElementById('victory').addEventListener('click', () => {
+            location.reload();
+        });
+    }
+}
+
+
 
 /* Shuffle function to have the cards in a random order */
 (function shuffle() {
