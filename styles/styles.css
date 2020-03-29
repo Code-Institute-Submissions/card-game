@@ -37,8 +37,9 @@ html{
     grid-template-columns: repeat(4, auto);
     grid-gap: 15px;
     justify-content: center;
-    perspective: 500px;
   }
+
+
 
 .card{
     position: relative;
@@ -153,3 +154,9 @@ html{
       transform: rotate(10deg)
     }
   }
+
+  @media(max-width:1000px){
+    #game-container{
+        grid-template-columns: repeat(3, auto);
+    }
+}
