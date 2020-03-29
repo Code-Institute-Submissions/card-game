@@ -138,7 +138,7 @@ html{
 
 .overlay-text.visible {
     display: flex;
-    animation: overlay-grow 500ms forwards;
+    animation: overlay-grow 2000ms ease-in;
 }
 
 /* Animation for the cards when matched to dance on the screen */
