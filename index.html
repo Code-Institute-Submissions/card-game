@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
+    <!-- Link to the font awesome website for the image on the back of the cards -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 
+    <!-- Link for the fonts used in the heading and the game description at the top of the site -->
     <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan+2&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
 
@@ -18,21 +19,25 @@
 </head>
 <body id="main-body">
 
+    <!-- Start game over lay -->
     <div class="overlay-text visible">
         Click to Start.<br> Timers running already!
     </div>
 
+    <!-- Game over overlay, only displyed when the timer hits 0 -->
     <div id="game-over-text" class="overlay-text">
         GAME OVER
         <span class="overlay-text-small">Times up, click for a new game!
         </span>
     </div>
 
+    <!-- Victory overlay, only used when the game has seen 6 matched pairs have been found -->
     <div id="victory" class="overlay-text">
         Victory
         <span class="overlay-text-small">Click to restart</span>
     </div>
 
+    <!-- Containers at the top of the page with the title, timer and game description inside -->
     <div class="container">
         <div class="row">
           <div class="col-sm" id="heading">
@@ -57,6 +62,8 @@
         </div>
     </div>
 
+    <!-- List of the 12 cards seen on the screen with the links to the images on the front face of the
+         card that have to be matched for the game to be won or lost. -->
     <div class="container" id="game-container">
         <div class="card" data-names="apple">
             <div class="card-back card-face">
@@ -156,6 +163,7 @@
         </div>
     </div>
 
+    <!-- Link to the javascript file powering the game functionality -->
     <script src="main.js"></script>
 
 </body>

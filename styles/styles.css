@@ -1,3 +1,4 @@
+/* Styles for the main body of the page */
 #main-body{
     margin: 0;
     background: radial-gradient(#ED9DFF, #F700FF)
@@ -7,6 +8,8 @@ html{
     min-height: 100vh;
 }
 
+/* Styles for the top of the page for the head title of the game,
+   The timer and the game explination as well */
 #heading {
     font-family: 'Baloo Chettan 2', cursive;
     font-size: 80px;
@@ -39,8 +42,9 @@ html{
     justify-content: center;
   }
 
-
-
+/* Properties for the front and back of the cards, along with properties
+   for cards when they match and the fliping of the cards to go from showing 
+   either the front or rear of the card */
 .card{
     position: relative;
     height: 150px;
@@ -97,6 +101,7 @@ html{
     transform: scale(0.5);
 }
 
+/* Values to give the hover affect on the front of the cards */
 .card-front:hover .card-value{
     transition: transform 500ms ease-in-out;
     transform: scale(0.3);
@@ -113,6 +118,7 @@ html{
     transform: scale(1.5);
 }
 
+/* Over lay properties used for the three overlays, start game, victory and game over. */
 .overlay-text {
     top: 0;
     left: 0;
@@ -155,6 +161,8 @@ html{
     }
   }
 
+  /* properties to change the layout for devices under 1000 pixels to render the page
+     without cards appearing to go off the edge of the screen */
   @media(max-width:1000px){
     #game-container{
         grid-template-columns: repeat(3, auto);

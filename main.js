@@ -1,4 +1,5 @@
-/* Countdown timer for the game length */
+/* Countdown timer for the game length
+   when the timer reaches zero the game over overlay is displayed */
 const startingMinutes = 1;
 let time = startingMinutes * 60;
 
@@ -66,7 +67,7 @@ function flipCard(){
 }     
 
 /* Checking if the cards match and stopping them from being clicked on again
-    during that game */
+    during that game, if the pair match it fires the check for victory function. */
 function checkCardsMatch() {
 
     if (firstCard.dataset.names === secondCard.dataset.names) {
@@ -108,15 +109,13 @@ function checkForVictory() {
 }
 
 
-
 /* Shuffle function to have the cards in a random order */
 (function shuffle() {
     cards.forEach(card => {
-      let randomPos = Math.floor(Math.random() * 12);
-      card.style.order = randomPos;
-    });
-  })();
-
+        let randomPos = Math.floor(Math.random() * 12);
+        card.style.order = randomPos;
+        });
+    })();
 
 /* Global attribute for the cards to flip the cards on click */
 cards.forEach(card => card.addEventListener('click', flipCard));
